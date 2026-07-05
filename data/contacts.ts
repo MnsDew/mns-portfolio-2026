@@ -21,7 +21,7 @@ export const contactLinks: ContactLink[] = [
   {
     id: "email",
     labelKey: "email",
-    href: "mailto:contact@mns70.com",
+    href: "mailto:englishmansh70@gmail.com",
     icon: "email",
   },
 ];
@@ -31,5 +31,5 @@ export const siteConfig = {
   fullName: "Mansoor Gabali",
   handle: "MNS70",
   url: "https://mns70.com",
-  email: "contact@mns70.com",
+  email: "englishmansh70@gmail.com",
 };

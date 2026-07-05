@@ -149,16 +149,21 @@ export function ThemeChanger() {
 
       {isOpen && (
         <>
-          <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+          <div className="fixed inset-0 z-[60]" onClick={() => setIsOpen(false)} />
           <div
             className={cn(
-              "absolute right-0 top-12 z-50",
-              "w-48 rounded-lg border border-border",
+              "z-[70] rounded-lg border border-border",
               "bg-card/95 backdrop-blur-xl shadow-xl",
               "p-3 animate-fade-in",
+              // Mobile: fixed panel above bottom controls, full width inside safe area
+              "fixed inset-x-4 bottom-20 w-auto max-md:max-h-[min(18rem,50vh)] max-md:overflow-y-auto",
+              // Desktop: anchor to trigger button
+              "md:absolute md:inset-x-auto md:bottom-auto md:end-0 md:start-auto md:top-12 md:w-48",
             )}
           >
-            <div className="mb-2 font-mono text-xs text-muted-foreground uppercase tracking-wider">Select Theme</div>
+            <div className="mb-2 font-mono text-xs text-muted-foreground uppercase tracking-wider">
+              Select Theme
+            </div>
             <div className="space-y-1.5">
               {Object.entries(themes).map(([key, theme]) => (
                 <button
@@ -173,19 +178,19 @@ export function ThemeChanger() {
                 >
                   <div
                     className={cn(
-                      "h-5 w-5 rounded-full border-2 border-border shadow-sm",
+                      "h-5 w-5 shrink-0 rounded-full border-2 border-border shadow-sm",
                       themeColors[key as ThemeColor],
                     )}
                   />
                   <span
                     className={cn(
-                      "font-mono text-sm flex-1 text-left",
+                      "font-mono text-sm flex-1 text-start",
                       currentTheme === key ? "text-foreground font-medium" : "text-muted-foreground",
                     )}
                   >
                     {theme.name}
                   </span>
-                  {currentTheme === key && <div className="h-1.5 w-1.5 rounded-full bg-primary" />}
+                  {currentTheme === key && <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />}
                 </button>
               ))}
             </div>

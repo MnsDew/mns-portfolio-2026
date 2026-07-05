@@ -15,8 +15,11 @@ export function QualificationsSection() {
   }));
 
   return (
-    <section id="qualifications" className="px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="qualifications"
+      className="scroll-reveal px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30"
+    >
+      <div className="scroll-reveal-stagger mx-auto max-w-7xl">
         <SpotlightCards
           items={items}
           eyebrow={t("eyebrow")}

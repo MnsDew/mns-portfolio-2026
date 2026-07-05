@@ -1,6 +1,6 @@
-import emailjs from "@emailjs/nodejs";
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/contact-schema";
+import { sendEmailViaEmailJs } from "@/lib/emailjs-send";
 import { contactRateLimit, getClientIp } from "@/lib/rate-limit";
 
 const MAX_BODY_BYTES = 8_192;
@@ -68,20 +68,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "not_configured" }, { status: 503 });
   }
 
+  if (!privateKey) {
+    return NextResponse.json({ error: "not_configured" }, { status: 503 });
+  }
+
   try {
-    await emailjs.send(
+    await sendEmailViaEmailJs({
       serviceId,
       templateId,
-      {
+      publicKey,
+      privateKey,
+      templateParams: {
         from_name: name,
         reply_to: email,
         message,
       },
-      {
-        publicKey,
-        ...(privateKey ? { privateKey } : {}),
-      }
-    );
+    });
 
     return NextResponse.json({ ok: true });
   } catch {

@@ -11,9 +11,12 @@ export function SkillsSection() {
   const [activeSkill, setActiveSkill] = useState<Skill | null>(null);
 
   return (
-    <section id="skills" className="px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30">
+    <section
+      id="skills"
+      className="scroll-reveal px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 sm:mb-10 space-y-3 text-center animate-fade-in-up">
+        <div className="scroll-reveal-stagger mb-8 sm:mb-10 space-y-3 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
             {t("eyebrow")}
           </p>
@@ -25,11 +28,12 @@ export function SkillsSection() {
 
         <div
           className={cn(
-            "mx-auto mb-8 max-w-xl rounded-xl border p-5 text-center transition-all duration-300",
+            "scroll-reveal-stagger mx-auto mb-8 max-w-xl rounded-xl border p-5 text-center transition-all duration-300",
             activeSkill
               ? "border-primary/40 bg-primary/5 glass"
               : "border-dashed border-border/60 bg-card/20"
           )}
+          style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
         >
           {activeSkill ? (
             <div className="flex flex-col items-center gap-3 animate-fade-in">
@@ -72,10 +76,14 @@ export function SkillsSection() {
                   setActiveSkill(isActive ? null : skill)
                 }
                 className={cn(
-                  "group flex flex-col items-center gap-2 transition-all duration-300 animate-fade-in-up",
+                  "scroll-reveal-stagger group flex flex-col items-center gap-2 transition-all duration-300",
                   isActive && "scale-105"
                 )}
-                style={{ animationDelay: `${(index % 12) * 50}ms` }}
+                style={
+                  {
+                    "--reveal-delay": `${(index % 12) * 25 + 100}ms`,
+                  } as React.CSSProperties
+                }
               >
                 <div
                   className={cn(

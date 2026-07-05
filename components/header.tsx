@@ -53,6 +53,18 @@ export function Header() {
     window.location.href = `/${newLocale}${pathname === "/" ? "" : pathname}`;
   };
 
+  const isArabic = locale === "ar";
+  const labelClass = isArabic
+    ? "font-mono text-base tracking-normal normal-case"
+    : "font-mono text-xs uppercase tracking-widest";
+  const brandClass = isArabic
+    ? "font-mono text-base tracking-tight"
+    : "font-mono text-sm tracking-tight";
+  const brandPrefixClass = isArabic ? "text-sm" : "text-xs";
+  const mobileNavClass = isArabic
+    ? "font-mono text-base tracking-normal normal-case"
+    : "font-mono text-sm uppercase tracking-widest";
+
   return (
     <header
       className={cn(
@@ -81,9 +93,14 @@ export function Header() {
                 className="object-contain dark:invert"
               />
             </div>
-            <span className="font-mono text-sm tracking-tight">
+            <span className={brandClass}>
               {tBrand("prefix") ? (
-                <span className="text-muted-foreground me-1 text-xs">
+                <span
+                  className={cn(
+                    "text-muted-foreground me-1",
+                    brandPrefixClass
+                  )}
+                >
                   {tBrand("prefix")}
                 </span>
               ) : null}
@@ -100,7 +117,9 @@ export function Header() {
                 key={item.labelKey}
                 href={item.href}
                 className={cn(
-                  "relative px-4 py-2.5 font-mono text-xs uppercase tracking-widest transition-all duration-300 rounded-lg",
+                  "relative transition-all duration-300 rounded-lg",
+                  isArabic ? "px-4 py-3" : "px-4 py-2.5",
+                  labelClass,
                   "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
                   hoveredIndex === index && "text-foreground"
                 )}
@@ -233,7 +252,10 @@ export function Header() {
                 key={item.labelKey}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 rounded-xl px-4 py-3.5 font-mono text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:bg-secondary/40 hover:text-foreground"
+                className={cn(
+                  "flex items-center gap-3 rounded-xl px-4 py-3.5 text-muted-foreground transition-colors hover:bg-secondary/40 hover:text-foreground",
+                  mobileNavClass
+                )}
               >
                 <span className="text-primary">{">"}</span>
                 {t(item.labelKey)}
@@ -248,7 +270,8 @@ export function Header() {
                   key={loc}
                   onClick={() => switchLocale(loc)}
                   className={cn(
-                    "rounded-full border px-3 py-2 font-mono text-xs transition-colors",
+                    "rounded-full border px-3 py-2 font-mono transition-colors",
+                    isArabic ? "text-sm" : "text-xs",
                     locale === loc
                       ? "border-primary/50 bg-primary/10 text-primary"
                       : "border-border/40 text-muted-foreground hover:border-border/70"

@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk, Cairo } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { tajawal } from "@/lib/tajawal-font";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -26,12 +26,6 @@ const geistMono = Geist_Mono({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  variable: "--font-cairo",
   display: "swap",
 });
 
@@ -78,9 +72,11 @@ export default async function LocaleLayout({
       lang={locale}
       dir={isRtl ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${cairo.variable}`}
+      className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${tajawal.variable}`}
     >
-      <body className={`font-sans antialiased ${isRtl ? "font-cairo" : ""}`}>
+      <body
+        className={`antialiased ${isRtl ? "font-tajawal" : "font-sans"}`}
+      >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
@@ -92,7 +88,6 @@ export default async function LocaleLayout({
             <Toaster richColors position="top-center" />
           </ThemeProvider>
         </NextIntlClientProvider>
-        <Analytics />
       </body>
     </html>
   );

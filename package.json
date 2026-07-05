@@ -25,7 +25,6 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@emailjs/nodejs": "^5.0.2",
     "@hookform/resolvers": "^3.10.0",
     "@opennextjs/cloudflare": "^1.20.1",
     "@radix-ui/react-accordion": "1.2.2",

@@ -42,6 +42,9 @@
   /* Custom animation tokens */
   --glow-color: oklch(0.5 0.22 170 / 0.15);
   --glow-color-strong: oklch(0.5 0.22 170 / 0.25);
+
+  /* Fixed header clearance for in-page anchor links */
+  --scroll-offset: 5.5rem;
 }
 
 .dark {
@@ -85,7 +88,7 @@
 @theme inline {
   --font-sans: var(--font-space-grotesk), var(--font-geist), "Geist", system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), "Geist Mono", "Geist Mono Fallback", monospace;
-  --font-cairo: var(--font-cairo), "Cairo", system-ui, sans-serif;
+  --font-tajawal: var(--font-family-tajawal), "Tajawal", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -128,12 +131,41 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-offset);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  section[id],
+  [id="contact-form"] {
+    scroll-margin-top: var(--scroll-offset);
+  }
   body {
     @apply bg-background text-foreground;
   }
-  html[dir="rtl"] body,
-  .font-cairo {
-    font-family: var(--font-cairo), system-ui, sans-serif;
+  html[dir="rtl"] {
+    --font-sans: var(--font-tajawal), "Tajawal", system-ui, sans-serif;
+    /* font-mono is used for UI labels; in Arabic those should be Tajawal too */
+    --font-mono: var(--font-tajawal), "Tajawal", system-ui, sans-serif;
+  }
+  html[dir="rtl"] body {
+    font-family: var(--font-tajawal), "Tajawal", system-ui, sans-serif;
+  }
+  html[dir="rtl"] [dir="ltr"] {
+    --font-sans: var(--font-space-grotesk), var(--font-geist), "Geist", system-ui,
+      sans-serif;
+    --font-mono: var(--font-geist-mono), "Geist Mono", "Geist Mono Fallback", monospace;
+  }
+  html[dir="rtl"] pre,
+  html[dir="rtl"] code {
+    font-family: var(--font-geist-mono), "Geist Mono", monospace;
+  }
+  .font-tajawal {
+    font-family: var(--font-tajawal), "Tajawal", system-ui, sans-serif;
   }
 }
 
@@ -395,6 +427,28 @@
   animation-delay: 0.8s;
 }
 
+/* Scroll-triggered section reveal (children only — section stays in layout) */
+.scroll-reveal:not(.is-visible) .scroll-reveal-stagger {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+.scroll-reveal.is-visible .scroll-reveal-stagger {
+  animation: fade-in-up 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal:not(.is-visible) .scroll-reveal-stagger {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-reveal.is-visible .scroll-reveal-stagger {
+    animation: none;
+  }
+}
+
 /* Glass morphism effect */
 .glass {
   background: oklch(from var(--card) l c h / 0.6);
@@ -510,4 +564,60 @@
 ::selection {
   background: oklch(from var(--primary) l c h / 0.3);
   color: var(--foreground);
+}
+
+/*
+ * Arabic typography: Tailwind v4 resolves font-mono via @theme at build time,
+ * so overriding --font-mono on html is not enough. These unlayered rules win
+ * over .font-mono / .font-sans utilities on RTL pages.
+ */
+html[dir="rtl"] {
+  font-size: 106.25%;
+}
+
+/* Keep the LTR terminal block at the original scale */
+html[dir="rtl"] [dir="ltr"] {
+  font-size: 94.117647%;
+}
+
+html[dir="rtl"] :is(.font-mono, .font-sans, .font-tajawal) {
+  font-family: var(--font-family-tajawal), "Tajawal", system-ui, sans-serif;
+}
+
+html[dir="rtl"] body {
+  line-height: 1.65;
+}
+
+/* Arabic UI labels: eyebrows, filters, meta — one step above text-xs */
+html[dir="rtl"] .font-mono.text-xs {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+html[dir="rtl"] .font-mono.text-\[10px\] {
+  font-size: 0.75rem;
+}
+
+html[dir="rtl"] .font-mono.text-\[11px\] {
+  font-size: 0.8125rem;
+}
+
+html[dir="rtl"] [dir="ltr"] .font-mono.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+html[dir="rtl"] [dir="ltr"] .font-mono.text-\[10px\] {
+  font-size: 10px;
+}
+
+html[dir="rtl"] [dir="ltr"] .font-mono.text-\[11px\] {
+  font-size: 11px;
+}
+
+html[dir="rtl"] [dir="ltr"] :is(.font-mono, .font-sans),
+html[dir="rtl"] pre,
+html[dir="rtl"] pre :is(.font-mono, *),
+html[dir="rtl"] code {
+  font-family: var(--font-geist-mono), "Geist Mono", "Geist Mono Fallback", monospace;
 }

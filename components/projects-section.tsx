@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { ExternalLink, Sparkles } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import {
   projects,
   projectCategories,
@@ -37,9 +37,12 @@ export function ProjectsSection() {
   }));
 
   return (
-    <section id="projects" className="px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30">
+    <section
+      id="projects"
+      className="scroll-reveal px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 sm:mb-14 space-y-3 animate-fade-in-up">
+        <div className="scroll-reveal-stagger mb-10 sm:mb-14 space-y-3">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
             {t("eyebrow")}
           </p>
@@ -49,9 +52,17 @@ export function ProjectsSection() {
           <p className="max-w-2xl text-muted-foreground">{t("subtitle")}</p>
         </div>
 
-        <ProjectCarousel title={t("featured")} items={carouselItems} />
+        <div
+          className="scroll-reveal-stagger"
+          style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
+        >
+          <ProjectCarousel title={t("featured")} items={carouselItems} />
+        </div>
 
-        <div className="mt-8 flex gap-2 overflow-x-auto pb-2 scrollbar-hide flex-wrap">
+        <div
+          className="scroll-reveal-stagger mt-8 flex gap-2 overflow-x-auto pb-2 scrollbar-hide flex-wrap"
+          style={{ "--reveal-delay": "100ms" } as React.CSSProperties}
+        >
           <button
             onClick={() => setActiveFilter("all")}
             className={cn(
@@ -84,21 +95,16 @@ export function ProjectsSection() {
             <article
               key={project.id}
               className={cn(
-                "group relative overflow-hidden rounded-xl border bg-card/40 p-6 glass transition-all duration-400 hover-lift hover:border-primary/40 animate-fade-in-up",
+                "scroll-reveal-stagger group relative overflow-hidden rounded-xl border bg-card/40 p-6 glass transition-all duration-400 hover-lift hover:border-primary/40",
                 project.featured &&
                   "sm:col-span-2 lg:col-span-2 border-primary/30 bg-gradient-to-br from-primary/8 via-card/50 to-primary/8"
               )}
-              style={{ animationDelay: `${(index % 6) * 100 + 200}ms` }}
+              style={
+                {
+                  "--reveal-delay": `${(index % 6) * 50 + 140}ms`,
+                } as React.CSSProperties
+              }
             >
-              {project.featured && (
-                <div className="absolute start-5 top-5 flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-3 py-1">
-                  <Sparkles className="h-3.5 w-3.5 text-primary" />
-                  <span className="font-mono text-[10px] uppercase text-primary">
-                    {t("featured")}
-                  </span>
-                </div>
-              )}
-
               <div className="relative mb-4 aspect-video overflow-hidden rounded-lg border border-border/50">
                 <Image
                   src={project.image}
@@ -106,13 +112,17 @@ export function ProjectsSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                {project.featured && (
+                  <span className="absolute bottom-3 start-3 z-10 font-mono text-[10px] uppercase text-primary">
+                    {t("featured")}
+                  </span>
+                )}
               </div>
 
               <h3
                 className={cn(
-                  "mb-2 font-bold tracking-tight group-hover:text-primary transition-colors",
-                  project.featured ? "text-xl" : "text-lg",
-                  project.featured && "mt-8"
+                  "mb-2 font-bold tracking-tight transition-colors group-hover:text-primary",
+                  project.featured ? "text-xl" : "text-lg"
                 )}
               >
                 {t(project.titleKey)}

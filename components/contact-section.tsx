@@ -83,9 +83,12 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30">
+    <section
+      id="contact"
+      className="scroll-reveal px-4 sm:px-6 py-20 sm:py-28 border-t border-border/30"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 space-y-3">
+        <div className="scroll-reveal-stagger mb-8 space-y-3">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
             {t("eyebrow")}
           </p>
@@ -96,7 +99,10 @@ export function ContactSection() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-6">
+          <div
+            className="scroll-reveal-stagger space-y-6"
+            style={{ "--reveal-delay": "60ms" } as React.CSSProperties}
+          >
             <div className="rounded-xl border border-border bg-card/40 glass p-4 sm:p-6">
               <GlobeContact />
             </div>
@@ -128,7 +134,11 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div id="contact-form" className="rounded-xl border border-border bg-card/40 glass p-6 sm:p-8">
+          <div
+            id="contact-form"
+            className="scroll-reveal-stagger rounded-xl border border-border bg-card/40 glass p-6 sm:p-8"
+            style={{ "--reveal-delay": "120ms" } as React.CSSProperties}
+          >
             <form ref={formRef} onSubmit={sendEmail} className="relative space-y-4">
               <input
                 type="text"
