@@ -2,12 +2,15 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import { contactLinks } from "@/data/contacts";
 import { GlobeContact } from "@/components/globe-contact";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { contactSchema } from "@/lib/contact-schema";
+import { getPublicEmailJsConfig, isEmailJsConfigured } from "@/lib/emailjs-config";
 
 const iconMap = {
   github: Github,
@@ -35,42 +38,34 @@ export function ContactSection() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const website = String(formData.get("website") ?? "");
+    if (website) {
+      toast.success(t("form.success"));
+      form.reset();
+      return;
+    }
+
+    if (!isEmailJsConfigured()) {
+      toast.error(t("form.notConfigured"));
+      return;
+    }
+
+    const parsed = contactSchema.safeParse({
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    });
+
+    if (!parsed.success) {
+      toast.error(t("form.error"));
+      return;
+    }
+
+    const { serviceId, templateId, publicKey } = getPublicEmailJsConfig();
 
     setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          message: formData.get("message"),
-          website,
-        }),
-      });
-
-      const data = (await res.json().catch(() => ({}))) as {
-        error?: string;
-        retryAfter?: number;
-      };
-
-      if (res.status === 429) {
-        toast.error(
-          t("form.rateLimit", { seconds: data.retryAfter ?? 60 })
-        );
-        return;
-      }
-
-      if (res.status === 503 && data.error === "not_configured") {
-        toast.error(t("form.notConfigured"));
-        return;
-      }
-
-      if (!res.ok) {
-        toast.error(t("form.error"));
-        return;
-      }
+      await emailjs.sendForm(serviceId, templateId, form, { publicKey });
 
       sessionStorage.setItem(LAST_SENT_KEY, String(Date.now()));
       toast.success(t("form.success"));
