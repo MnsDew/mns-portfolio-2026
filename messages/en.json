@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "title": "Eng. Mansoor Gabali (MNS70) — Software Engineer & Full-Stack Developer",
+    "description": "Portfolio of Mansoor Gabali (MNS70). Full-stack software engineer building elegant web, mobile, and fintech solutions.",
+    "keywords": [
+      "Mansoor Gabali",
+      "MNS70",
+      "Software Engineer",
+      "Full-Stack Developer",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Portfolio",
+      "Istanbul",
+      "SaaS",
+      "Fintech"
+    ]
+  },
+  "nav": {
+    "home": "Home",
+    "qualifications": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "brand": {
+    "prefix": "Eng.",
+    "name": "Mansoor",
+    "surname": "Gabali"
+  },
+  "hero": {
+    "greeting": "Hello, World!",
+    "name": "Eng. Mansoor Gabali | MNS70",
+    "role": "Software Engineer & Full-Stack Developer",
+    "tagline": "Turning ideas into elegant solutions",
+    "discoverMore": "Discover More",
+    "roles": [
+      "building interfaces",
+      "crafting full-stack apps",
+      "designing systems",
+      "training AI models",
+      "shipping products"
+    ]
+  },
+  "qualifications": {
+    "eyebrow": "Qualifications & Experience",
+    "heading": "Where I've been building",
+    "explore": "Explore",
+    "student": {
+      "title": "Software Engineering Student",
+      "organization": "Altinbas University",
+      "role": "Senior Year (4th Year) Student",
+      "location": "Türkiye, Istanbul"
+    },
+    "ai": {
+      "title": "AI Prompt Engineer",
+      "organization": "Outlier Company",
+      "role": "AI Trainer & Prompt Specialist",
+      "location": "Remote"
+    },
+    "teacher": {
+      "title": "English Teacher",
+      "organization": "English Time School",
+      "role": "Part-time English Teacher",
+      "location": "Istanbul"
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "heading": "Projects & Work",
+    "subtitle": "A selection of my recent projects, client work, and academic research.",
+    "featured": "Featured",
+    "showing": "Showing {count} of {total} projects",
+    "filters": {
+      "all": "All",
+      "fullStack": "Full-Stack",
+      "clientWork": "Client Work",
+      "fintech": "Fintech",
+      "academic": "Academic",
+      "systemDesign": "System Design",
+      "desktopApp": "Desktop App",
+      "mobileApp": "Mobile App",
+      "backend": "Backend"
+    },
+    "links": {
+      "liveSite": "Live Site",
+      "visitProject": "Visit Project",
+      "viewLinkedIn": "View on LinkedIn",
+      "liveEn": "Live (EN)",
+      "liveAr": "Live (AR)",
+      "location": "Location",
+      "fullWalkthrough": "Full Walkthrough",
+      "viewProject": "View Project",
+      "github": "GitHub"
+    },
+    "velura": {
+      "title": "Velura Hotel Management System",
+      "description": "Full-stack hotel management system with online reservations, admin dashboard, room inventory, payment processing, real-time currency exchange API, email service, analytics & custom reports. Multilingual (EN/AR/TR), responsive, and fully branded."
+    },
+    "eotra": {
+      "title": "Eotra Menu — SaaS Digital Menu Platform",
+      "description": "Multi-tenant SaaS platform I architected and own as a service. Branded QR menus with auto-translation (EN/AR/TR), 13 templates, drag-and-drop editor, analytics, and payment integration. Multi-DB tenant architecture with admin, business owner, and customer views."
+    },
+    "ibosh": {
+      "title": "IBOSH — Luxury E-Commerce Platform",
+      "description": "Full-stack, multi-language luxury e-commerce platform with light/dark theming, Shopify integration for automatic product sync, O(1) product search, SEO-friendly multi-language routing (/en, /ar, /tr), WhatsApp checkout flow, and CDN-optimized delivery. Fully branded end-to-end."
+    },
+    "tradespilot": {
+      "title": "TradesPilot AI — Automated Trading Platform",
+      "description": "Full-stack fintech SaaS platform for automated forex trading. AI-powered trading bot, copy trading & signal marketplace, white-label integration, real-time analytics, and trusted partner ecosystem. Multilingual, light/dark theming, SEO-optimized, and responsive."
+    },
+    "forex": {
+      "title": "Forex Trading Portfolio Platform",
+      "description": "Personal portfolio for forex trading with light/dark theming, full brand identity, EN & AR support with O(1) language/color switching. Integrated with TradingView real-time market prices and charts. Fintech-grade UI."
+    },
+    "testing": {
+      "title": "Software Testing & Validation",
+      "description": "SWE431 academic project: top-down integration strategy with stubs and integration test sessions (S1–S4). Covers Repository → Controller flow, expected vs actual results, and full system testing."
+    },
+    "latosta": {
+      "title": "LaTosta — Digital Restaurant Menu",
+      "description": "Modern, responsive digital menu for LaTosta Restaurant in Jeddah, KSA. Mobile-first, QR-ready, Arabic & English, no app download needed. Optimized for speed & UX with seamless delivery platform redirection."
+    },
+    "altava": {
+      "title": "Altava — E-Commerce System Architecture (C4 Model)",
+      "description": "Scalable e-commerce architecture documentation using C4 Model, clean architecture, and SOLID principles. 9 professional diagrams: Context, Container, Component, UML Class, Sequence, ERD, Deployment, Use Case, and Activity."
+    },
+    "ibo": {
+      "title": "Client Portfolio — Ibo Global Influencer",
+      "description": "Responsive portfolio for Ibo, a global influencer. Showcases personal brand, social media presence, and collaborations across TikTok, Instagram, YouTube, and Snapchat. Built with Next.js, smooth animations, and multilingual support."
+    },
+    "librotrack": {
+      "title": "LibroTrack — Library Management System",
+      "description": "100% Java library management system using MySQL, Swing, and JavaFX. Full CRUD for books and students, lending/returning, reports, and statistics across two databases."
+    },
+    "vigor": {
+      "title": "Vigor — Workout Plan Sharing App",
+      "description": "Fitness management mobile app for setting goals, tracking progress, and logging activities. Intuitive interface built with React Native and Expo to enhance engagement and motivation."
+    },
+    "bus": {
+      "title": "Bus Reservation System",
+      "description": "Java-based bus reservation system for booking, updating, canceling, and searching reservations. Includes admin functionalities and data persistence."
+    },
+    "bookstore": {
+      "title": "Bookstore Management System",
+      "description": "Command-line app built with JavaScript for managing bookstore inventory and sales. CRUD operations for books, sales processing, and receipt generation."
+    }
+  },
+  "skills": {
+    "eyebrow": "Tech Stack",
+    "heading": "Skills & Technologies",
+    "subtitle": "Tools I use to build modern software — tap any skill to learn how I apply it.",
+    "selectHint": "Tap a skill below to see its category and how I use it.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "devops": "DevOps",
+      "mobile": "Mobile",
+      "tools": "Tools",
+      "design": "Design"
+    },
+    "categoryDesc": {
+      "frontend": "Interfaces, components, styling, and polished client-side experiences.",
+      "backend": "APIs, server logic, authentication, and scalable application architecture.",
+      "database": "Data modeling, queries, persistence, and production-ready storage.",
+      "devops": "Containers, Linux environments, and reliable deployment workflows.",
+      "mobile": "Cross-platform apps with native-feel UI and smooth performance.",
+      "tools": "Version control, API testing, and day-to-day developer productivity.",
+      "design": "UI/UX exploration, prototypes, and design-to-code handoff."
+    }
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "heading": "Let's build something together",
+    "subtitle": "Have a project in mind or want to collaborate? Send me a message.",
+    "findMe": "Find me elsewhere",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Your message...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again.",
+      "notConfigured": "Email service is not configured yet.",
+      "rateLimit": "Too many messages. Please wait {seconds} seconds and try again.",
+      "tooFast": "Please wait a minute before sending another message."
+    },
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "globe": {
+      "hint": "Drag to explore — works on touch and desktop. Toggle globe ↔ map.",
+      "unroll": "Unroll Globe",
+      "roll": "Roll to Globe",
+      "animating": "Animating...",
+      "reset": "Reset"
+    }
+  },
+  "footer": {
+    "crafted": "Crafted with",
+    "and": "& code",
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "tr": "Türkçe"
+  },
+  "loader": {
+    "name": "Eng. Mansoor Gabali (MNS70)",
+    "role": "Software Engineer & Full-Stack Developer"
+  }
+}

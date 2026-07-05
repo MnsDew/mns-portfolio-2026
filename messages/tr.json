@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Mansoor Gabali — Yazılım Mühendisi & Full-Stack Geliştirici",
+    "description": "Mansoor Gabali (MNS70) portföyü. Zarif web, mobil ve fintech çözümleri geliştiren full-stack yazılım mühendisi.",
+    "keywords": [
+      "Mansoor Gabali",
+      "MNS70",
+      "Yazılım Mühendisi",
+      "Full-Stack Geliştirici",
+      "React",
+      "Next.js",
+      "Portföy",
+      "İstanbul",
+      "SaaS",
+      "Fintech"
+    ]
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "qualifications": "Deneyim",
+    "projects": "Projeler",
+    "skills": "Yetenekler",
+    "contact": "İletişim"
+  },
+  "brand": {
+    "prefix": "",
+    "name": "Mansoor",
+    "surname": "Gabali"
+  },
+  "hero": {
+    "greeting": "Merhaba, Dünya!",
+    "name": "Mansoor Gabali | MNS70",
+    "role": "Yazılım Mühendisi & Full-Stack Geliştirici",
+    "tagline": "Fikirleri zarif çözümlere dönüştürüyorum",
+    "discoverMore": "Keşfet",
+    "roles": [
+      "arayüzler geliştiriyorum",
+      "full-stack uygulamalar yapıyorum",
+      "sistemler tasarlıyorum",
+      "AI modelleri eğitiyorum",
+      "ürünler yayınlıyorum"
+    ]
+  },
+  "qualifications": {
+    "eyebrow": "Nitelikler & Deneyim",
+    "heading": "Nerede geliştirdim",
+    "explore": "Keşfet",
+    "student": {
+      "title": "Yazılım Mühendisliği Öğrencisi",
+      "organization": "Altınbaş Üniversitesi",
+      "role": "Son Sınıf (4. Yıl) Öğrencisi",
+      "location": "Türkiye, İstanbul"
+    },
+    "ai": {
+      "title": "AI Prompt Mühendisi",
+      "organization": "Outlier Company",
+      "role": "AI Eğitmeni & Prompt Uzmanı",
+      "location": "Uzaktan"
+    },
+    "teacher": {
+      "title": "İngilizce Öğretmeni",
+      "organization": "English Time School",
+      "role": "Yarı Zamanlı İngilizce Öğretmeni",
+      "location": "İstanbul"
+    }
+  },
+  "projects": {
+    "eyebrow": "Portföy",
+    "heading": "Projeler & İşler",
+    "subtitle": "Son projelerim, müşteri işleri ve akademik araştırmalarımdan bir seçki.",
+    "featured": "Öne Çıkan",
+    "showing": "{total} projeden {count} tanesi gösteriliyor",
+    "filters": {
+      "all": "Tümü",
+      "fullStack": "Full-Stack",
+      "clientWork": "Müşteri İşi",
+      "fintech": "Fintech",
+      "academic": "Akademik",
+      "systemDesign": "Sistem Tasarımı",
+      "desktopApp": "Masaüstü Uygulama",
+      "mobileApp": "Mobil Uygulama",
+      "backend": "Backend"
+    },
+    "links": {
+      "liveSite": "Canlı Site",
+      "visitProject": "Projeyi Ziyaret Et",
+      "viewLinkedIn": "LinkedIn'de Gör",
+      "liveEn": "Canlı (EN)",
+      "liveAr": "Canlı (AR)",
+      "location": "Konum",
+      "fullWalkthrough": "Tam Tur",
+      "viewProject": "Projeyi Gör",
+      "github": "GitHub"
+    },
+    "velura": {
+      "title": "Velura Otel Yönetim Sistemi",
+      "description": "Online rezervasyon, admin paneli, oda envanteri, ödeme işleme, gerçek zamanlı döviz API'si, e-posta servisi, analitik ve özel raporlar içeren full-stack otel yönetim sistemi. Çok dilli (EN/AR/TR), responsive ve tam markalı."
+    },
+    "eotra": {
+      "title": "Eotra Menu — SaaS Dijital Menü Platformu",
+      "description": "Mimarisini tasarladığım ve hizmet olarak sahip olduğum çok kiracılı SaaS platformu. Markalı QR menüler, otomatik çeviri (EN/AR/TR), 13 şablon, sürükle-bırak editör, analitik ve ödeme entegrasyonu. Admin, işletme sahibi ve müşteri görünümleriyle çoklu veritabanı kiracı mimarisi."
+    },
+    "ibosh": {
+      "title": "IBOSH — Lüks E-Ticaret Platformu",
+      "description": "Açık/koyu tema, Shopify entegrasyonu, O(1) ürün arama, SEO dostu çok dilli yönlendirme (/en, /ar, /tr), WhatsApp ödeme akışı ve CDN optimizasyonlu lüks e-ticaret platformu."
+    },
+    "tradespilot": {
+      "title": "TradesPilot AI — Otomatik Ticaret Platformu",
+      "description": "Otomatik forex ticareti için full-stack fintech SaaS platformu. AI destekli trading bot, copy trading ve sinyal pazarı, white-label entegrasyon, gerçek zamanlı analitik ve güvenilir ortak ekosistemi."
+    },
+    "forex": {
+      "title": "Forex Ticaret Portföy Platformu",
+      "description": "Açık/koyu temalı forex portföyü, tam marka kimliği, EN ve AR desteği ile O(1) dil/renk geçişi. TradingView gerçek zamanlı fiyat ve grafik entegrasyonu. Fintech düzeyinde UI."
+    },
+    "testing": {
+      "title": "Yazılım Testi & Doğrulama",
+      "description": "SWE431 akademik projesi: stub'lar ve entegrasyon test oturumları (S1–S4) ile top-down entegrasyon stratejisi. Repository → Controller akışı, beklenen ve gerçek sonuçlar."
+    },
+    "latosta": {
+      "title": "LaTosta — Dijital Restoran Menüsü",
+      "description": "Cidde'deki LaTosta Restoran için modern, responsive dijital menü. Mobile-first, QR hazır, Arapça ve İngilizce, uygulama indirmeye gerek yok. Hız ve UX için optimize edildi."
+    },
+    "altava": {
+      "title": "Altava — E-Ticaret Sistem Mimarisi (C4 Model)",
+      "description": "C4 Model, clean architecture ve SOLID prensipleriyle ölçeklenebilir e-ticaret mimarisi dokümantasyonu. 9 profesyonel diyagram: Context, Container, Component, UML Class, Sequence, ERD, Deployment, Use Case ve Activity."
+    },
+    "ibo": {
+      "title": "Müşteri Portföyü — Ibo Global Influencer",
+      "description": "Global influencer Ibo için responsive portföy. Kişisel marka, sosyal medya varlığı ve TikTok, Instagram, YouTube, Snapchat işbirlikleri. Next.js, akıcı animasyonlar ve çok dilli destek."
+    },
+    "librotrack": {
+      "title": "LibroTrack — Kütüphane Yönetim Sistemi",
+      "description": "MySQL, Swing ve JavaFX kullanan %100 Java kütüphane yönetim sistemi. Kitap ve öğrenci CRUD, ödünç verme/iade, raporlar ve iki veritabanı üzerinde istatistikler."
+    },
+    "vigor": {
+      "title": "Vigor — Antrenman Planı Paylaşım Uygulaması",
+      "description": "Hedef belirleme, ilerleme takibi ve aktivite kaydı için fitness yönetim mobil uygulaması. React Native ve Expo ile sezgisel arayüz."
+    },
+    "bus": {
+      "title": "Otobüs Rezervasyon Sistemi",
+      "description": "Rezervasyon oluşturma, güncelleme, iptal ve arama için Java tabanlı otobüs rezervasyon sistemi. Admin işlevleri ve veri kalıcılığı içerir."
+    },
+    "bookstore": {
+      "title": "Kitapçı Yönetim Sistemi",
+      "description": "Kitapçı envanteri ve satış yönetimi için JavaScript CLI uygulaması. Kitap CRUD, satış işleme ve fiş oluşturma."
+    }
+  },
+  "skills": {
+    "eyebrow": "Teknoloji Yığını",
+    "heading": "Yetenekler & Teknolojiler",
+    "subtitle": "Modern yazılım geliştirmek için kullandığım araçlar — nasıl kullandığımı görmek için bir beceriye dokunun.",
+    "selectHint": "Kategori ve kullanım alanını görmek için aşağıdan bir beceri seçin.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Veritabanı",
+      "devops": "DevOps",
+      "mobile": "Mobil",
+      "tools": "Araçlar",
+      "design": "Tasarım"
+    },
+    "categoryDesc": {
+      "frontend": "Arayüzler, bileşenler, stillendirme ve cilalı istemci tarafı deneyimler.",
+      "backend": "API'ler, sunucu mantığı, kimlik doğrulama ve ölçeklenebilir mimari.",
+      "database": "Veri modelleme, sorgular, kalıcılık ve üretime hazır depolama.",
+      "devops": "Konteynerler, Linux ortamları ve güvenilir dağıtım iş akışları.",
+      "mobile": "Yerel hissi veren arayüz ve akıcı performansla çapraz platform uygulamalar.",
+      "tools": "Sürüm kontrolü, API testi ve günlük geliştirici verimliliği.",
+      "design": "UI/UX keşfi, prototipler ve tasarımdan koda aktarım."
+    }
+  },
+  "contact": {
+    "eyebrow": "İletişime Geç",
+    "heading": "Birlikte bir şeyler inşa edelim",
+    "subtitle": "Aklınızda bir proje mi var veya işbirliği mi istiyorsunuz? Bana mesaj gönderin.",
+    "findMe": "Beni başka yerlerde bulun",
+    "form": {
+      "name": "Adınız",
+      "email": "E-postanız",
+      "message": "Mesajınız...",
+      "send": "Mesaj Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesaj başarıyla gönderildi!",
+      "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+      "notConfigured": "E-posta servisi henüz yapılandırılmadı.",
+      "rateLimit": "Çok fazla mesaj. Lütfen {seconds} saniye bekleyip tekrar deneyin.",
+      "tooFast": "Başka bir mesaj göndermeden önce lütfen bir dakika bekleyin."
+    },
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-posta",
+    "globe": {
+      "hint": "Keşfetmek için sürükleyin — dokunmatik ve masaüstünde çalışır.",
+      "unroll": "Küreyi Aç",
+      "roll": "Haritaya Dön",
+      "animating": "Animasyon...",
+      "reset": "Sıfırla"
+    }
+  },
+  "footer": {
+    "crafted": "İle yapıldı",
+    "and": "& kod",
+    "rights": "Tüm hakları saklıdır"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية",
+    "tr": "Türkçe"
+  },
+  "loader": {
+    "name": "Mansoor Gabali",
+    "role": "Yazılım Mühendisi & Full-Stack Geliştirici"
+  }
+}
