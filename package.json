@@ -2,6 +2,7 @@
   "name": "mns70-portfolio",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.11.1",
   "description": "Mansoor Gabali (MNS70) — Software Engineer & Full-Stack Developer portfolio.",
   "keywords": [
     "portfolio",
@@ -101,6 +102,14 @@
     "overrides": {
       "@types/react": "19.2.7",
       "@types/react-dom": "19.2.3"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "@tailwindcss/oxide",
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
   }
 }
